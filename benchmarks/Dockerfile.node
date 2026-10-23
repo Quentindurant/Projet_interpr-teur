@@ -1,0 +1,6 @@
+FROM node:25-slim
+WORKDIR /app
+COPY benchmarks/*.ts benchmarks/
+COPY lib/workloads/ lib/workloads/
+COPY types/ types/
+CMD ["node", "benchmarks/bench.ts"]

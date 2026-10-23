@@ -1,0 +1,9 @@
+# Deno ne publie pas de tag majeur (":2") : on fige la version exacte.
+FROM denoland/deno:2.9.8
+WORKDIR /app
+COPY benchmarks/*.ts benchmarks/
+COPY lib/workloads/ lib/workloads/
+COPY types/ types/
+# Modèle de permissions de Deno : seulement ce dont bench.ts a besoin.
+ENTRYPOINT ["deno", "run", "--allow-read", "--allow-write", "--allow-run", "--allow-env"]
+CMD ["benchmarks/bench.ts"]

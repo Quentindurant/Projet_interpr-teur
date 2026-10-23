@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-10-22T11:56:17.224Z",
+  "limits": {
+    "cpus": 1,
+    "memoryMb": 512
+  },
+  "entries": [
+    {
+      "runtime": "node",
+      "version": "25.9.0",
+      "runs": 3,
+      "measuredAt": "2026-10-22T11:56:07.062Z",
+      "coldStartMs": {
+        "median": 58.36,
+        "min": 41.77,
+        "max": 66.71
+      },
+      "fibMs": {
+        "median": 65.56,
+        "min": 65.53,
+        "max": 74.84
+      },
+      "sortMs": {
+        "median": 445.58,
+        "min": 428.48,
+        "max": 526.55
+      },
+      "jsonMs": {
+        "median": 170.84,
+        "min": 130.65,
+        "max": 196.21
+      },
+      "tokenizeMs": {
+        "median": 629.87,
+        "min": 622.08,
+        "max": 664.11,
+        "items": 318832,
+        "itemsPerSec": 506187
+      },
+      "sseMs": {
+        "median": 90.82,
+        "min": 83.51,
+        "max": 97.32,
+        "items": 100002,
+        "itemsPerSec": 1101101
+      },
+      "vectorMs": {
+        "median": 82.96,
+        "min": 69.94,
+        "max": 87.1,
+        "items": 10,
+        "itemsPerSec": 121
+      },
+      "peakRssMb": 213.01,
+      "imageSizeMb": 229
+    },
+    {
+      "runtime": "bun",
+      "version": "1.4.4",
+      "runs": 3,
+      "measuredAt": "2026-10-22T11:56:10.343Z",
+      "coldStartMs": {
+        "median": 3.3,
+        "min": 3.24,
+        "max": 3.36
+      },
+      "fibMs": {
+        "median": 43.2,
+        "min": 42.1,
+        "max": 43.69
+      },
+      "sortMs": {
+        "median": 192.48,
+        "min": 188.08,
+        "max": 197.85
+      },
+      "jsonMs": {
+        "median": 42.75,
+        "min": 34.4,
+        "max": 43.93
+      },
+      "tokenizeMs": {
+        "median": 131.06,
+        "min": 129.18,
+        "max": 133.37,
+        "items": 318832,
+        "itemsPerSec": 2432718
+      },
+      "sseMs": {
+        "median": 44.64,
+        "min": 44.07,
+        "max": 65.14,
+        "items": 100002,
+        "itemsPerSec": 2240188
+      },
+      "vectorMs": {
+        "median": 48.42,
+        "min": 47.02,
+        "max": 60.57,
+        "items": 10,
+        "itemsPerSec": 207
+      },
+      "peakRssMb": 207.54,
+      "imageSizeMb": 232
+    },
+    {
+      "runtime": "deno",
+      "version": "2.9.8",
+      "runs": 3,
+      "measuredAt": "2026-10-22T11:56:16.590Z",
+      "coldStartMs": {
+        "median": 10.57,
+        "min": 9.68,
+        "max": 13.92
+      },
+      "fibMs": {
+        "median": 60.05,
+        "min": 59.66,
+        "max": 62.27
+      },
+      "sortMs": {
+        "median": 468.89,
+        "min": 431.51,
+        "max": 555.44
+      },
+      "jsonMs": {
+        "median": 135.4,
+        "min": 128.67,
+        "max": 136.15
+      },
+      "tokenizeMs": {
+        "median": 270.66,
+        "min": 267.91,
+        "max": 271.21,
+        "items": 318832,
+        "itemsPerSec": 1177980
+      },
+      "sseMs": {
+        "median": 66.88,
+        "min": 62.85,
+        "max": 71.53,
+        "items": 100002,
+        "itemsPerSec": 1495245
+      },
+      "vectorMs": {
+        "median": 83.63,
+        "min": 59.27,
+        "max": 87.72,
+        "items": 10,
+        "itemsPerSec": 120
+      },
+      "peakRssMb": 185.69,
+      "imageSizeMb": 175
+    }
+  ]
+}

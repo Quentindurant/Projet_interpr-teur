@@ -1,0 +1,6 @@
+FROM oven/bun:1
+WORKDIR /app
+COPY benchmarks/*.ts benchmarks/
+COPY lib/workloads/ lib/workloads/
+COPY types/ types/
+CMD ["bun", "benchmarks/bench.ts"]

@@ -1,0 +1,43 @@
+name: runtime-bench
+
+# Mêmes limites pour les trois runtimes. Valeurs surchargeables via run.sh.
+x-bench: &bench
+  user: "${HOST_UID:-1000}:${HOST_GID:-1000}"
+  cpus: ${BENCH_CPUS:-1}
+  mem_limit: ${BENCH_MEM_MB:-512}m
+  memswap_limit: ${BENCH_MEM_MB:-512}m
+  environment:
+    HOME: /tmp
+    DENO_DIR: /tmp/deno
+    RESULTS_DIR: /results
+    DATA_DIR: /data
+    RUNS: ${RUNS:-10}
+    BENCH_CPUS: ${BENCH_CPUS:-1}
+    BENCH_MEM_MB: ${BENCH_MEM_MB:-512}
+  volumes:
+    - ./results:/results
+
+services:
+  node:
+    <<: *bench
+    image: runtime-bench-node
+    build: { context: .., dockerfile: benchmarks/Dockerfile.node }
+
+  bun:
+    <<: *bench
+    image: runtime-bench-bun
+    build: { context: .., dockerfile: benchmarks/Dockerfile.bun }
+
+  deno:
+    <<: *bench
+    image: runtime-bench-deno
+    build: { context: .., dockerfile: benchmarks/Dockerfile.deno }
+
+  # Fusion des résultats, exécutée avec l'image Node : rien à installer sur l'hôte.
+  merge:
+    <<: *bench
+    image: runtime-bench-node
+    command: ["node", "benchmarks/merge.ts"]
+    volumes:
+      - ./results:/results
+      - ../data:/data
